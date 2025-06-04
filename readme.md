@@ -1,4 +1,4 @@
-    <h1>Consigna</h1>
+<h1>Consigna</h1>
 
 Crea un array de objetos de productos, dentro de las propiedades de sus objetos agrega las siguientes (id, nombre, precio, cantidad, subtotal)
 
