@@ -1,4 +1,4 @@
-    Consigna
+    <h1>Consigna</h1>
 
 Crea un array de objetos de productos, dentro de las propiedades de sus objetos agrega las siguientes (id, nombre, precio, cantidad, subtotal)
 
@@ -8,7 +8,7 @@ Crea un método para calcular el subtotal del producto utilizando las propiedade
 
 Crea una funcionalidad en la cual puedes agregar el producto creado a un array de objetos el cual pudiera tener el nombre de productos.
 
-Formato
+    <h2>Formato</h2>
 
 Página HTML y código fuente en JavaScript.
 
@@ -16,7 +16,7 @@ Aspectos a incluir
 
 Archivo HTML y Archivo JS, referenciado en el HTML por etiqueta <script src="js/miarchivo.js"></script>, que incluya la definición de un algoritmo en JavaScript necesaria.
 
-Sugerencias
+    <h3>Sugerencias<h3>
 
 Al momento de crear el objeto a través de una función se introducirán los valores de las propiedades usando la función prompt()
 
