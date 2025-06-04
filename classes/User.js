@@ -43,8 +43,6 @@ ${productList.showProducts().map((product, index) => `${index + 1}- ${product.ge
     showMoney = () => alert(`${this.getNombre()} este es su dinero disponible: $${this.getDinero()}`);
 
     showPersonalObjects = () => {
-
-        
           alert(`Sus objetos personales:
 ${this.objetos.map(objeto => objeto.cantidad + ' ' + objeto.nombre + (objeto.cantidad > 1 ? "s" : "")).join('\n')}`);
 }
@@ -56,13 +54,14 @@ ${this.objetos.map(objeto => objeto.cantidad + ' ' + objeto.nombre + (objeto.can
             }
 
         const flatArray = this.getComprasRealizadas().flat();
+        
         this.objetos = flatArray.reduce((acum, current) => {
 
             const productoExistente = acum.find(producto => producto.nombre === current.nombre);
 
             productoExistente
             ? productoExistente.cantidad += current.cantidad
-            : acum = [...acum, current];
+            : acum.push({...current});
 
             return acum;
         }, []);
@@ -88,7 +87,7 @@ ${this.objetos.map(objeto => objeto.cantidad + ' ' + objeto.nombre + (objeto.can
     cleanCart = () => this.cart.cleanCart();
     
     addDonePurchase = () => {
-        return this.comprasRealizadas = [...this.comprasRealizadas, this.getCart()];
+        return this.comprasRealizadas = [...this.comprasRealizadas, ...this.getCart()];
     };
 
     showPersonalData = () => alert(`      Su información personal:
@@ -115,6 +114,7 @@ ${this.objetos.map(objeto => objeto.cantidad + ' ' + objeto.nombre + (objeto.can
         this.addDonePurchase();
         this.obtainPurchasedObjects();
         alert(`${this.getNombre()} se realizó su pago, su dinero disponible es $${this.getDinero()}`);
+        this.getCart().forEach(elem => elem.resetQuantity());
         this.cleanCart();
         console.log(this.getDinero());
     }

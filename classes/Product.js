@@ -3,7 +3,7 @@ class Product {
     nombre;
     precio;
     cantidad = 1;
-    subtotal
+    subtotal;
 
     constructor(product) {
         this.nombre = product.nombre;
@@ -18,6 +18,11 @@ class Product {
         this.cantidad += 1;
         this.calculateSubTotal();
     };
+
+    resetQuantity = () => {
+        this.cantidad = 1;
+        this.calculateSubTotal();
+    }
 
     getPrice = () => this.precio;
     getName = () => this.nombre;

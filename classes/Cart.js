@@ -2,20 +2,22 @@ class Cart {
     cart = [];
     productsQuantity;
     cartTotal;
+    cartSubtotal;
     constructor () {}
 
     showCart = () => this.cart;
 
     addToCart = product => {
         const findProduct = this.cart.find(actualProduct => actualProduct.nombre === product.nombre);
-
+            console.log("findProduct", findProduct)
         if(findProduct) {
-            findProduct.addOne();
+            findProduct.cantidad += 1;
+            console.log(this.cart)
             this.cartSubtotal = this.showSubTotal();
             return 
         }
 
-        return this.cart = [...this.cart, product];
+        return this.cart = [...this.cart, {...product}];
     }
 
     showProductsQuantity = () => this.cart.length;
