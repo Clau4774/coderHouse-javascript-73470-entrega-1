@@ -29,7 +29,6 @@ ${productList.showProducts().map((product, index) => `${index + 1}- ${product.ge
 
         if (producto > productList.showProducts().length || producto < 0 || !producto)  {
             alert('Ha elegido una opción no permitida');
-            console.log("typeof producto if", typeof producto);
             return;
         }
 
@@ -42,16 +41,15 @@ ${productList.showProducts().map((product, index) => `${index + 1}- ${product.ge
 
     showMoney = () => alert(`${this.getNombre()} este es su dinero disponible: $${this.getDinero()}`);
 
-    showPersonalObjects = () => {
-          alert(`Sus objetos personales:
+    showPersonalObjects = () => alert(`Sus objetos personales:
 ${this.objetos.map(objeto => objeto.cantidad + ' ' + objeto.nombre + (objeto.cantidad > 1 ? "s" : "")).join('\n')}`);
-}
+
     
     obtainPurchasedObjects = () => {
         if(this.getObjetos().length <= 0){
-            this.objetos = [...this.getComprasRealizadas()];
+            this.objetos = [...this.getComprasRealizadas()].flat();
             return;
-            }
+        }
 
         const flatArray = this.getComprasRealizadas().flat();
         
@@ -71,7 +69,6 @@ ${this.objetos.map(objeto => objeto.cantidad + ' ' + objeto.nombre + (objeto.can
     addMoney = () => {
         
         const dinero = Number(prompt('Indique cuanto dinero quiere agregar:'));
-                    console.log("dinero", dinero)
                     const dineroAnterior = this.getDinero();
 
                     if (!dinero || typeof dinero !== 'number') {
@@ -116,7 +113,6 @@ ${this.objetos.map(objeto => objeto.cantidad + ' ' + objeto.nombre + (objeto.can
         alert(`${this.getNombre()} se realizó su pago, su dinero disponible es $${this.getDinero()}`);
         this.getCart().forEach(elem => elem.resetQuantity());
         this.cleanCart();
-        console.log(this.getDinero());
     }
 
 }

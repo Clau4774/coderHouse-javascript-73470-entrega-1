@@ -9,11 +9,10 @@ class Cart {
 
     addToCart = product => {
         const findProduct = this.cart.find(actualProduct => actualProduct.nombre === product.nombre);
-            console.log("cart, add", this.cart)
+
         if(findProduct) {
             findProduct.cantidad += 1;
             findProduct.subtotal = findProduct.cantidad * findProduct.precio;
-            console.log("cart, add if",this.cart)
             this.cartSubtotal = this.showSubTotal();
             return 
         }
