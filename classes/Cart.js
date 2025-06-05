@@ -12,6 +12,10 @@ class Cart {
             console.log("findProduct", findProduct)
         if(findProduct) {
             findProduct.cantidad += 1;
+            //findProduct.calculateSubTotal();
+            console.log('find if precio' , findProduct.precio);
+            console.log('find if cantidad', findProduct.cantidad);
+            findProduct.subtotal = findProduct.cantidad * findProduct.precio;
             console.log(this.cart)
             this.cartSubtotal = this.showSubTotal();
             return 

@@ -11,9 +11,6 @@ class Product {
         this.subtotal = this.precio * this.cantidad;
     }
 
-
-    calculateSubTotal = () => this.subtotal = this.getPrice() * this.cantidad;
-
     addOne = () => {
         this.cantidad += 1;
         this.calculateSubTotal();
