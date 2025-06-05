@@ -20,4 +20,4 @@ Archivo HTML y Archivo JS, referenciado en el HTML por etiqueta <script src="js/
 
 Al momento de crear el objeto a través de una función se introducirán los valores de las propiedades usando la función prompt()
 
-Los valores para la propiedad id pueden ser introducidos de forma manual o automáticamente creando la propiedad como estática y incrementando su valor por cada creación de un nuevo objeto
+Los valores para la propiedad id pueden ser introducidos de forma manual o automáticamente creando la propiedad como estática y incrementando su valor por cada creación de un nuevo objeto.
