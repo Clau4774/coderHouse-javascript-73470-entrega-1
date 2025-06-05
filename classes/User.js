@@ -87,7 +87,7 @@ ${this.objetos.map(objeto => objeto.cantidad + ' ' + objeto.nombre + (objeto.can
     cleanCart = () => this.cart.cleanCart();
     
     addDonePurchase = () => {
-        return this.comprasRealizadas = [...this.comprasRealizadas, ...this.getCart()];
+        return this.comprasRealizadas = [...this.comprasRealizadas, this.getCart()];
     };
 
     showPersonalData = () => alert(`      Su información personal:

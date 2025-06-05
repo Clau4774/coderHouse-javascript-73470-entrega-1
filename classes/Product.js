@@ -18,7 +18,6 @@ class Product {
 
     resetQuantity = () => {
         this.cantidad = 1;
-        this.calculateSubTotal();
     }
 
     getPrice = () => this.precio;
